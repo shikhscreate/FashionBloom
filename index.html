@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FashionBloom</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<h1>FashionBloom 🌸</h1>
+
+<input id="searchInput" placeholder="Search..." onkeyup="searchProducts()">
+
+<button onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+</nav>
+
+<div class="hero">
+<h2>Our Products</h2>
+</div>
+
+<div class="categories">
+<button onclick="showHome()">Home</button>
+<button onclick="filterCategory('dresses')">Dresses</button>
+<button onclick="filterCategory('tops')">Tops</button>
+<button onclick="filterCategory('jeans')">Jeans</button>
+<button onclick="filterCategory('kurtis')">Kurtis</button>
+</div>
+
+<section id="products"></section>
+
+<!-- CART -->
+<div id="cart" class="cart">
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+<h3>Total: ₹<span id="total">0</span></h3>
+
+<button onclick="openCheckout()">Checkout</button>
+<button onclick="toggleCart()">Close</button>
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkout" class="checkout-overlay">
+
+<div class="checkout-box">
+
+<h2>🧾 Checkout</h2>
+<p class="sub">Billing Details</p>
+
+<div id="orderSummary"></div>
+
+<form onsubmit="placeOrder(event)">
+
+<div class="row">
+<input placeholder="Full Name" required>
+<input placeholder="Phone" required>
+</div>
+
+<textarea placeholder="Address" required></textarea>
+
+<div class="row">
+<input placeholder="City" required>
+<input placeholder="Pincode" required>
+</div>
+
+<select>
+<option>Cash on Delivery</option>
+<option>UPI (Demo)</option>
+</select>
+
+<button type="submit">Place Order</button>
+</form>
+
+<button class="cancel" onclick="closeCheckout()">Cancel</button>
+
+</div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>© 2026 FashionBloom</p>
+<p>About: Trendy fashion store for women clothing</p>
+<p>Contact: support@fashionbloom.com</p>
+<p>Contact No.:558157259</p>
+<p>Address: Raipur, Chhattisgarh, India</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
